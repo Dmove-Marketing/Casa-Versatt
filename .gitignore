@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.astro/
+
+# Variáveis de ambiente
+.env
+.env.*
+*.local
+
+# Logs e Caches
+*.log
+npm-debug.log*
+
+# OS e Editores / IA
+.DS_Store
+.vscode/
+.claude/
+.idea/
+
+# Arquivos originais brutos
+GALERIA/
+ESTRUTURA/
+_html-originais/
+*.mp4
+CASA\ VERSATT__-65.jpg
