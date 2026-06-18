@@ -2,10 +2,10 @@
   "project_name": "casa-versatt",
   "project_slug": "casa-versatt",
   "client": "Casa Versatt",
-  "environment": "development",
+  "environment": "production",
   "tracking": {
-    "gtm_id": "",
-    "enabled": false
+    "gtm_id": "GTM-NZ39SP35",
+    "enabled": true
   },
   "forms": {
     "lead-form": {
