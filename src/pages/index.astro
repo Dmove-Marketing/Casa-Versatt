@@ -20,7 +20,6 @@ import '../styles/index.css';
     <a href="#estrutura">Estrutura</a>
     <a href="#tipos">Tipos de evento</a>
     <a href="#galeria">Galeria</a>
-    <a href="#contato" class="nav-cta">Solicitar orçamento</a>
   </div>
 </nav>
 
@@ -37,30 +36,28 @@ import '../styles/index.css';
       <a href="#contato" class="btn-primary">Solicite um orçamento <span class="arrow">&rarr;</span></a>
     </div>
   </div>
-  <div class="scroll-hint">Role para descobrir<span></span></div>
+
 </section>
 
 <!-- SOBRE -->
 <section class="sobre" id="sobre">
   <div class="wrap">
-    <div class="sobre-top">
-      <div class="reveal">
+    <div class="sobre-grid">
+      <div class="sobre-content reveal">
         <span class="eyebrow">A casa</span>
         <h2 class="title">O ambiente certo para aproximar equipes, clientes e oportunidades.</h2>
-      </div>
-      <div class="reveal">
         <p>Localizada na Zona Sul de São Paulo, a Casa Versatt foi criada para empresas que buscam mais do que um local para reunir pessoas. Com três pavimentos integrados e ambientes versáteis, o espaço oferece a liberdade necessária para transformar treinamentos, convenções, apresentações e confraternizações em experiências mais fluidas, organizadas e memoráveis.</p>
         <div class="guest-badge"><b>120 a 150</b><span>convidados por evento</span></div>
       </div>
-    </div>
-    <div class="video-frame reveal">
-      <Video
-        src="https://eventos.casaversatt.com/casa-versatt-web.mp4"
-        title="Casa Versatt — Espaço para eventos corporativos"
-        description="Conheça os três andares da Casa Versatt, espaço para eventos corporativos na Zona Sul de São Paulo."
-        uploadDate="2026-06-18"
-        duration="PT5M25S"
-      />
+      <div class="video-frame reveal">
+        <Video
+          src="https://eventos.casaversatt.com/casa-versatt-web.mp4"
+          title="Casa Versatt — Espaço para eventos corporativos"
+          description="Conheça os três andares da Casa Versatt, espaço para eventos corporativos na Zona Sul de São Paulo."
+          uploadDate="2026-06-18"
+          duration="PT5M25S"
+        />
+      </div>
     </div>
   </div>
 </section>
@@ -119,23 +116,23 @@ import '../styles/index.css';
     <div class="infra-grid">
       <div class="icard reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
-        <h3>Arquitetura clean</h3><p>Acabamento neutro que valoriza qualquer cenário.</p>
+        <h3>Arquitetura<br />clean</h3><p>Acabamento neutro que valoriza qualquer cenário.</p>
       </div>
       <div class="icard reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg></div>
-        <h3>Acústica comprovada</h3><p>Som equilibrado para falas, vídeos e música.</p>
+        <h3>Acústica<br />comprovada</h3><p>Som equilibrado para falas, vídeos e música.</p>
       </div>
       <div class="icard reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>Localização acessível</h3><p>Zona Sul, perto da Avenida do Cursino.</p>
+        <h3>Localização<br />acessível</h3><p>Zona Sul, perto da Avenida do Cursino.</p>
       </div>
       <div class="icard reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h2"/></svg></div>
-        <h3>Elevador entre os níveis</h3><p>Circulação fácil para convidados e equipe.</p>
+        <h3>Elevador entre<br />os níveis</h3><p>Circulação fácil para convidados e equipe.</p>
       </div>
       <div class="icard reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 3v18M4 7.5l8 4.5 8-4.5"/></svg></div>
-        <h3>Curadoria de fornecedores</h3><p>Parceiros de confiança para toda a produção.</p>
+        <h3>Curadoria de<br />fornecedores</h3><p>Parceiros de confiança para toda a produção.</p>
       </div>
     </div>
   </div>
@@ -146,7 +143,7 @@ import '../styles/index.css';
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Galeria</span>
-      <h2 class="title" style="margin-left:auto;margin-right:auto">Uma casa. Diversas possibilidades.</h2>
+      <h2 class="title" style="margin-left:auto;margin-right:auto">Uma casa.<br />Diversas possibilidades.</h2>
       <p>Explore os espaços que podem receber o seu próximo evento corporativo.</p>
     </div>
     <div class="gal-grid reveal">
@@ -190,6 +187,10 @@ import '../styles/index.css';
     <div class="foot">
       <div class="brand">Casa <b>Versatt</b></div>
       <p>Copyright © 2026 Casa Versatt. Todos os direitos reservados.</p>
+      <a href="https://dmove.com.br" target="_blank" rel="noopener noreferrer" class="dmove-link" title="Desenvolvido por Dmove">
+        <span>Desenvolvido por:</span>
+        <Img src="Versao-Principal-Negativo-scaled-e1750426923582.avif" alt="Dmove" width={120} class="dmove-logo-img" />
+      </a>
     </div>
   </div>
 </footer>
