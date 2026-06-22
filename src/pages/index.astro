@@ -1,202 +1,336 @@
 ---
-// Gerado a partir de: index.html
 import Base from '../layouts/Base.astro';
 import config from '../../config.json';
-import LeadForm from '../components/forms/LeadForm.astro';
 import Img from '../components/ui/Img.astro';
-import Video from '../components/ui/Video.astro';
+import LeadForm from '../components/forms/LeadForm.astro';
 import '../styles/index.css';
 ---
 
 <Base
-  title="Casa Versatt | Eventos Corporativos na Zona Sul de São Paulo"
-  ogImage="/images/og-index.jpg"
+  title="Casa Versatt · Eventos Corporativos · Zona Sul, São Paulo"
+  description="Casa de eventos corporativos na Zona Sul de São Paulo. Três pavimentos integrados para treinamentos, convenções, lançamentos e confraternizações. De 120 a 150 convidados."
 >
+
 <!-- NAV -->
-<nav id="nav">
-  <div class="brand">Casa <b>Versatt</b></div>
-  <div class="nav-links">
-    <a href="#sobre">A casa</a>
-    <a href="#estrutura">Estrutura</a>
-    <a href="#tipos">Tipos de evento</a>
-    <a href="#galeria">Galeria</a>
-  </div>
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__logo">Casa <b>Versatt</b></a>
+  <a href="#contato" class="nav__cta">Solicite um orçamento</a>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
+<header class="hero" id="top">
+  <div class="hero__bg">
     <Img src="hero-bg.jpg" alt="Casa Versatt — espaço para eventos corporativos" priority />
   </div>
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="eyebrow">Eventos corporativos · Zona Sul SP</span>
-      <h1 class="display">O cenário ideal para o <em>próximo passo</em> da sua empresa.</h1>
-      <p class="lead">Um espaço para eventos corporativos que se adapta aos objetivos da sua empresa.</p>
-      <a href="#contato" class="btn-primary">Solicite um orçamento <span class="arrow">&rarr;</span></a>
+  <div class="hero__inner">
+    <h1 class="display reveal d1">
+      <span>O cenário ideal</span>
+      <span>para o <span class="gold">próximo evento</span></span>
+      <span>da sua empresa</span>
+    </h1>
+    <p class="hero__sub reveal d2">Um espaço para eventos corporativos que se adapta aos objetivos da sua empresa.</p>
+    <div class="hero__cta reveal d3">
+      <a href="#contato" class="btn btn--gold">Solicite um orçamento <span class="arr">→</span></a>
     </div>
   </div>
-
-</section>
+</header>
 
 <!-- SOBRE -->
-<section class="sobre" id="sobre">
+<section class="section sobre" id="sobre">
   <div class="wrap">
-    <div class="sobre-grid">
-      <div class="sobre-content reveal">
-        <span class="eyebrow">A casa</span>
-        <h2 class="title">O ambiente certo para aproximar equipes, clientes e oportunidades.</h2>
-        <p>Localizada na Zona Sul de São Paulo, a Casa Versatt foi criada para empresas que buscam mais do que um local para reunir pessoas. Com três pavimentos integrados e ambientes versáteis, o espaço oferece a liberdade necessária para transformar treinamentos, convenções, apresentações e confraternizações em experiências mais fluidas, organizadas e memoráveis.</p>
-        <div class="guest-badge"><b>120 a 150</b><span>convidados por evento</span></div>
+    <div class="sobre__grid">
+      <div class="sobre__text reveal">
+        <span class="eyebrow">A Casa</span>
+        <h2 class="display">
+          <span class="ln">O ambiente certo para <span class="gold">aproximar</span></span>
+          <span class="ln">equipes, clientes e oportunidades</span>
+        </h2>
+        <p>Mais do que um lugar para reunir pessoas, a Casa Versatt é um ambiente pensado para gerar conexões reais. Localizada na Zona Sul de São Paulo, reúne três pavimentos integrados e ambientes versáteis que transformam treinamentos, convenções, apresentações e confraternizações em experiências mais fluidas, organizadas e memoráveis.</p>
       </div>
-      <div class="video-frame reveal">
-        <Video
-          src="https://eventos.casaversatt.com/casa-versatt-web.mp4"
-          title="Casa Versatt — Espaço para eventos corporativos"
-          description="Conheça os três andares da Casa Versatt, espaço para eventos corporativos na Zona Sul de São Paulo."
-          uploadDate="2026-06-18"
-          duration="PT5M25S"
-        />
+      <div class="sobre__media reveal d2">
+        <div class="frame frame--video">
+          <iframe
+            src="https://drive.google.com/file/d/14SBdmGtF8OeBSOc4uBeAW0EjBG-9w0Cd/preview"
+            allow="autoplay"
+            allowfullscreen
+            title="Casa Versatt em vídeo"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="sobre__stats reveal d2">
+      <div class="sstat"><span class="sstat__num">3</span><span class="sstat__lbl">pavimentos integrados</span></div>
+      <div class="sstat"><span class="sstat__num">120–150</span><span class="sstat__lbl">convidados por evento</span></div>
+      <div class="sstat"><span class="sstat__num">Zona Sul</span><span class="sstat__lbl">São Paulo · SP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTRUTURA -->
+<section class="section estrutura" id="estrutura">
+  <div class="wrap">
+    <div class="estrutura__top section-head reveal">
+      <span class="eyebrow center">Estrutura</span>
+      <h2 class="display">
+        <span class="ln">Três andares, uma configuração</span>
+        <span class="ln">para <span class="gold">cada momento</span></span>
+      </h2>
+      <p>Elevador e escadas conectam todos os níveis, permitindo dividir cada momento do evento sem que nada se misture.</p>
+    </div>
+    <div class="estrutura__grid">
+      <div class="floors reveal">
+        <div class="floor">
+          <div class="floor__dot">01</div>
+          <div>
+            <h3>Recepção e credenciamento</h3>
+            <p>Chegada, boas-vindas e organização dos convidados em um ambiente acolhedor.</p>
+          </div>
+        </div>
+        <div class="floor">
+          <div class="floor__dot">02</div>
+          <div>
+            <h3>Plenárias e apresentações</h3>
+            <p>O palco principal para conteúdo, com estrutura pensada para foco e conexão.</p>
+          </div>
+        </div>
+        <div class="floor">
+          <div class="floor__dot">03</div>
+          <div>
+            <h3>Networking e confraternização</h3>
+            <p>O espaço para encerrar com leveza, celebrar e estreitar relações.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel reveal d2" data-carousel="estrutura">
+        <div class="carousel__track">
+          <div class="carousel__slide active"><Img src="estrutura-1.jpg" alt="Estrutura Casa Versatt" /></div>
+          <div class="carousel__slide"><Img src="estrutura-2.jpg" alt="Estrutura Casa Versatt" /></div>
+          <div class="carousel__slide"><Img src="estrutura-3.jpg" alt="Estrutura Casa Versatt" /></div>
+          <div class="carousel__slide"><Img src="estrutura-4.jpg" alt="Estrutura Casa Versatt" /></div>
+          <div class="carousel__slide"><Img src="estrutura-5.jpg" alt="Estrutura Casa Versatt" /></div>
+          <div class="carousel__slide"><Img src="estrutura-6.jpg" alt="Estrutura Casa Versatt" /></div>
+        </div>
+        <div class="carousel__dots"></div>
+        <div class="carousel__nav">
+          <button class="carousel__btn" data-dir="-1" aria-label="Anterior">&#8249;</button>
+          <button class="carousel__btn" data-dir="1" aria-label="Próximo">&#8250;</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ESTRUTURA / CARROSSEL -->
-<section id="estrutura">
+<!-- TIPOS -->
+<section class="section tipos" id="tipos">
   <div class="wrap">
-    <div class="carousel-head">
-      <div class="sec-head reveal" style="margin-bottom:0">
-        <span class="eyebrow">Estrutura</span>
-        <h2 class="title">Três andares, uma configuração para cada momento.</h2>
-        <p>Elevador e escadas conectam todos os níveis, permitindo dividir cada momento da celebração sem que nada se misture.</p>
-      </div>
-      <div class="car-nav reveal">
-        <button id="carPrev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button id="carNext" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-      </div>
-    </div>
-    <div class="carousel reveal" id="carousel">
-      <div class="slide"><Img src="estrutura-1.jpg" alt="Térreo — Casa Versatt" /></div>
-      <div class="slide"><Img src="estrutura-2.jpg" alt="Primeiro andar — Casa Versatt" /></div>
-      <div class="slide"><Img src="estrutura-3.jpg" alt="Rooftop — Casa Versatt" /></div>
-      <div class="slide"><Img src="estrutura-4.jpg" alt="Circulação — Casa Versatt" /></div>
-      <div class="slide"><Img src="estrutura-5.jpg" alt="Detalhe — Casa Versatt" /></div>
-    </div>
-  </div>
-</section>
-
-<!-- TIPOS DE EVENTOS -->
-<section class="events" id="tipos">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Tipos de evento</span>
-      <h2 class="title">Encontros que se adaptam às necessidades do seu time.</h2>
+    <div class="tipos__head section-head reveal">
+      <span class="eyebrow center">Formatos</span>
+      <h2 class="display">
+        <span class="ln">Encontros que se adaptam</span>
+        <span class="ln">às necessidades do <span class="gold">seu time</span></span>
+      </h2>
       <p>Recebemos desde reuniões reservadas até celebrações com a equipe inteira.</p>
     </div>
-    <div class="egrid">
-      <div class="eitem reveal"><div class="num">01</div><h3>Treinamentos e workshops</h3><p>Foco e conforto para o time aprender no andar reservado.</p></div>
-      <div class="eitem reveal"><div class="num">02</div><h3>Convenções e plenárias</h3><p>Plateia acomodada e palco montado conforme o roteiro.</p></div>
-      <div class="eitem reveal"><div class="num">03</div><h3>Lançamento de produto</h3><p>Recepção, demonstração e brinde em ambientes distintos.</p></div>
-      <div class="eitem reveal"><div class="num">04</div><h3>Reuniões de diretoria</h3><p>Privacidade total para decisões estratégicas.</p></div>
-      <div class="eitem reveal"><div class="num">05</div><h3>Confraternizações</h3><p>Happy hours e festas que aproximam quem trabalha junto.</p></div>
-      <div class="eitem reveal"><div class="num">06</div><h3>Premiações e celebrações</h3><p>Reconhecimento com a cenografia que a data merece.</p></div>
+    <div class="tipos__grid">
+      <div class="tipo reveal">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M7 8h8M7 11.2h5"/><path d="M12 16v4M8.5 20h7"/></svg></span>
+        <h3>Treinamentos e workshops</h3>
+      </div>
+      <div class="tipo reveal d1">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="10" rx="3"/><path d="M6 11a6 6 0 0 0 12 0"/><path d="M12 17v4M9 21h6"/></svg></span>
+        <h3>Convenções e plenárias</h3>
+      </div>
+      <div class="tipo reveal d2">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><path d="M12 3c2.9 1.6 4.4 4.5 4.4 7.9 0 1.7-.5 3.3-1.3 4.6H8.9c-.8-1.3-1.3-2.9-1.3-4.6C7.6 7.5 9.1 4.6 12 3z"/><circle cx="12" cy="9.5" r="1.6"/><path d="M8.6 16 6.4 18.4M15.4 16l2.2 2.4M12 17.2V21"/></svg></span>
+        <h3>Lançamento de produto</h3>
+      </div>
+      <div class="tipo reveal">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="4" rx="2"/><circle cx="7.5" cy="6.5" r="1.5"/><circle cx="12" cy="6.5" r="1.5"/><circle cx="16.5" cy="6.5" r="1.5"/></svg></span>
+        <h3>Reuniões de diretoria</h3>
+      </div>
+      <div class="tipo reveal d1">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><path d="M7 3.5 9.4 10c.2 1.7-.9 3-2.4 3s-2.6-1.3-2.4-3z"/><path d="M7 13v6M4.6 19h4.8"/><path d="M17 3.5 14.6 10c-.2 1.7.9 3 2.4 3s2.6-1.3 2.4-3z"/><path d="M17 13v6M14.6 19h4.8"/></svg></span>
+        <h3>Confraternizações</h3>
+      </div>
+      <div class="tipo reveal d2">
+        <span class="tipo__ic"><svg viewBox="0 0 24 24"><path d="M8 4h8v3.5a4 4 0 0 1-8 0z"/><path d="M8 5H5.6a2.4 2.4 0 0 0 2.4 2.6M16 5h2.4A2.4 2.4 0 0 1 16 7.6"/><path d="M12 11.5V15M9 19.5h6M9.8 19.5l.6-4.5h3.2l.6 4.5"/></svg></span>
+        <h3>Premiações e celebrações</h3>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INFRAESTRUTURA -->
-<section id="infra">
+<!-- INFRA -->
+<section class="section infra" id="infra">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Infraestrutura</span>
-      <h2 class="title">Detalhes pensados para quem organiza.</h2>
-      <p>Os seus convidados terão uma experiência premium do início ao fim.</p>
+    <div class="infra__head section-head reveal">
+      <span class="eyebrow center">Infraestrutura</span>
+      <h2 class="display">
+        <span class="ln">Detalhes pensados</span>
+        <span class="ln">para <span class="gold">quem organiza</span></span>
+      </h2>
+      <p>Seus convidados terão uma experiência premium do início ao fim.</p>
     </div>
-    <div class="infra-grid">
-      <div class="icard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></div>
-        <h3>Arquitetura<br />clean</h3><p>Acabamento neutro que valoriza qualquer cenário.</p>
+    <div class="infra__grid">
+      <div class="feat reveal">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9.5L12 4l7 5.5V21"/><path d="M9.5 21v-5h5v5"/></svg></div>
+        <h3>Arquitetura clean</h3>
       </div>
-      <div class="icard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h3l3-9 6 18 3-9h3"/></svg></div>
-        <h3>Acústica<br />comprovada</h3><p>Som equilibrado para falas, vídeos e música.</p>
+      <div class="feat reveal d1">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M4 9v6h3l5 4V5L7 9z"/><path d="M16 8.5a4 4 0 0 1 0 7"/><path d="M18.5 6a7 7 0 0 1 0 12"/></svg></div>
+        <h3>Acústica comprovada</h3>
       </div>
-      <div class="icard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-        <h3>Localização<br />acessível</h3><p>Zona Sul, perto da Avenida do Cursino.</p>
+      <div class="feat reveal d2">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M12 21s6.5-5.8 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5.2 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+        <h3>Localização acessível</h3>
       </div>
-      <div class="icard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h2"/></svg></div>
-        <h3>Elevador entre<br />os níveis</h3><p>Circulação fácil para convidados e equipe.</p>
+      <div class="feat reveal d3">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M7.5 9 9 7l1.5 2M7.5 15 9 17l1.5-2"/><circle cx="16" cy="8.5" r=".85"/><circle cx="16" cy="12" r=".85"/><circle cx="16" cy="15.5" r=".85"/></svg></div>
+        <h3>Elevador entre os níveis</h3>
       </div>
-      <div class="icard reveal">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 3v18M4 7.5l8 4.5 8-4.5"/></svg></div>
-        <h3>Curadoria de<br />fornecedores</h3><p>Parceiros de confiança para toda a produção.</p>
+      <div class="feat reveal d4">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6z"/><path d="m9 11.5 2 2 4-4"/></svg></div>
+        <h3>Curadoria de fornecedores</h3>
       </div>
     </div>
   </div>
 </section>
 
 <!-- GALERIA -->
-<section class="gallery" id="galeria">
+<section class="section galeria" id="galeria">
   <div class="wrap">
-    <div class="sec-head center reveal">
-      <span class="eyebrow">Galeria</span>
-      <h2 class="title" style="margin-left:auto;margin-right:auto">Uma casa.<br />Diversas possibilidades.</h2>
-      <p>Explore os espaços que podem receber o seu próximo evento corporativo.</p>
+    <div class="galeria__head section-head reveal">
+      <span class="eyebrow center">Espaços</span>
+      <h2 class="display">
+        <span class="ln">Uma casa.</span>
+        <span class="ln"><span class="gold">Diversas possibilidades</span></span>
+      </h2>
+      <p>Explore os ambientes que podem receber o seu próximo evento corporativo.</p>
     </div>
-    <div class="gal-grid reveal">
-      <Img src="galeria-1.jpg" alt="Casa Versatt — galeria 1" />
-      <Img src="galeria-2.jpg" alt="Casa Versatt — galeria 2" />
-      <Img src="galeria-3.jpg" alt="Casa Versatt — galeria 3" />
-      <Img src="galeria-4.jpg" alt="Casa Versatt — galeria 4" />
-      <Img src="galeria-5.jpg" alt="Casa Versatt — galeria 5" />
-      <Img src="galeria-6.jpg" alt="Casa Versatt — galeria 6" />
-      <Img src="galeria-7.jpg" alt="Casa Versatt — galeria 7" />
-      <Img src="galeria-8.jpg" alt="Casa Versatt — galeria 8" />
-      <Img src="galeria-9.jpg" alt="Casa Versatt — galeria 9" />
+    <div class="mosaic reveal d1">
+      <figure class="tile t-wide">
+        <Img src="galeria-1.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <Img src="galeria-2.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <Img src="galeria-3.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <Img src="galeria-4.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile t-wide">
+        <Img src="galeria-5.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <Img src="galeria-6.jpg" alt="Espaço Casa Versatt" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- CONTATO -->
-<section id="contato">
+<section class="section contato" id="contato">
   <div class="wrap">
-    <div class="contact-card reveal">
-      <div class="contact-intro">
-        <span class="eyebrow">Contato</span>
-        <h2>Vamos planejar seu próximo encontro de sucesso?</h2>
-        <p>Preencha o formulário para receber nosso contato.</p>
+    <div class="section-head reveal">
+      <span class="eyebrow center">Orçamento</span>
+      <h2 class="display">
+        <span class="ln">Vamos planejar seu próximo</span>
+        <span class="ln">encontro de <span class="gold">sucesso</span>?</span>
+      </h2>
+    </div>
+    <div class="contato__grid">
+      <div class="reveal">
+        <p class="contato__lead">Preencha o formulário e nossa equipe entra em contato para desenhar o evento ideal para a sua empresa.</p>
+        <div class="contato__aside">
+          <div class="row">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            Zona Sul, São Paulo, SP
+          </div>
+        </div>
       </div>
-      <LeadForm
-        formId="lead-form"
-        project={config.project_slug}
-        submitUrl={config.forms['lead-form'].webhooks[0]}
-        redirectUrl={config.forms['lead-form'].redirect_on_success}
-        submitText="Enviar solicitação"
-        honeypot
-      />
+      <div class="reveal d2">
+        <LeadForm
+          formId="lead-form"
+          project={config.project_slug}
+          submitUrl={config.forms['lead-form'].webhooks[0]}
+          redirectUrl={config.forms['lead-form'].redirect_on_success}
+          submitText="Enviar solicitação"
+          honeypot
+          fields={[
+            { name: 'nome',     type: 'text',     label: 'Nome',                 placeholder: 'Seu nome completo',         required: true,  full: true,  autocomplete: 'name' },
+            { name: 'telefone', type: 'tel',      label: 'Telefone',             placeholder: '(11) 90000-0000',           required: true,  mask: 'phone', autocomplete: 'tel' },
+            { name: 'email',    type: 'email',    label: 'E-mail',               placeholder: 'voce@empresa.com',          required: true,  autocomplete: 'email' },
+            { name: 'data',     type: 'date',     label: 'Data do evento',       placeholder: 'Data do evento' },
+            { name: 'pessoas',  type: 'number',   label: 'Número de pessoas',    placeholder: '120',                       required: true,  min: '1' },
+            { name: 'tipo',     type: 'select',   label: 'Tipo de evento',       placeholder: '',                          required: true,  full: true, options: [
+              { value: '',                                     label: 'Tipo de evento',                      disabled: true, selected: true },
+              { value: 'Aniversário',                          label: 'Aniversário' },
+              { value: 'Aniversário debutante',                label: 'Aniversário debutante' },
+              { value: 'Bodas',                                label: 'Bodas' },
+              { value: 'Casamento',                            label: 'Casamento' },
+              { value: 'Confraternização corporativa',         label: 'Confraternização corporativa' },
+              { value: 'Confraternização social',              label: 'Confraternização social' },
+              { value: 'Corporativo',                          label: 'Corporativo' },
+              { value: 'Feiras e Exposições',                  label: 'Feiras e Exposições' },
+              { value: 'Formatura',                            label: 'Formatura' },
+              { value: 'Happy Hours',                          label: 'Happy Hours' },
+              { value: 'Masterclass e Palestras',              label: 'Masterclass e Palestras' },
+              { value: 'Mentorias e Treinamentos',             label: 'Mentorias e Treinamentos' },
+              { value: 'Offsite corporativo',                  label: 'Offsite corporativo' },
+              { value: 'Reuniões de Networking',               label: 'Reuniões de Networking' },
+              { value: 'Shows e Festivais',                    label: 'Shows e Festivais' },
+              { value: 'Workshops, Conferências e Seminários', label: 'Workshops, Conferências e Seminários' },
+              { value: 'Outros',                               label: 'Outros' },
+            ]},
+            { name: 'detalhes', type: 'textarea', label: 'Detalhes adicionais',  placeholder: 'Conte um pouco sobre o que você imagina para o evento.', full: true },
+          ]}
+        />
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div class="brand">Casa <b>Versatt</b></div>
-      <p>Copyright © 2026 Casa Versatt. Todos os direitos reservados.</p>
-      <a href="https://dmove.com.br" target="_blank" rel="noopener noreferrer" class="dmove-link" title="Desenvolvido por Dmove">
-        <span>Desenvolvido por:</span>
-        <Img src="Versao-Principal-Negativo-scaled-e1750426923582.avif" alt="Dmove" width={120} class="dmove-logo-img" />
-      </a>
-    </div>
+<footer class="footer">
+  <div class="lockup">
+    <div class="lockup__name">Casa <b>Versatt</b></div>
+    <div class="lockup__sub">Casa de Eventos</div>
+  </div>
+  <div class="footer__links">
+    <a href="https://casaversatt.com.br/" target="_blank" rel="noopener">Site institucional</a>
+    <a href="#contato">Orçamento</a>
+  </div>
+  <div class="footer__copy">Copyright &copy; 2026 Casa Versatt &middot; Todos os direitos reservados</div>
+  <div class="footer__dev">
+    Desenvolvido por
+    <a href="https://dmove.com.br" target="_blank" rel="noopener">
+      <Img src="logo-dmove-preto.png" alt="Dmove" width={72} height={20} />
+    </a>
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb__close" id="lbClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.4" fill="none">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+  <button class="lb__nav prev" data-lb="-1" aria-label="Anterior">&#8249;</button>
+  <img id="lbImg" alt="" />
+  <button class="lb__nav next" data-lb="1" aria-label="Próximo">&#8250;</button>
+</div>
 
 </Base>
+
 <script>
   import '../scripts/index.js';
 </script>
