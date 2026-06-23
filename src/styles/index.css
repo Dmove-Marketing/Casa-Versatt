@@ -132,7 +132,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 .sobre__grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center }
 .sobre__text { text-align: left }
 .sobre__text .eyebrow { margin-bottom: 24px }
-.sobre__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em; color: var(--text); margin: 0 0 26px }
+.sobre__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em; color: var(--text); margin: 0 0 22px }
 .sobre__text p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; max-width: 52ch; margin: 0 }
 .sobre__media { position: relative }
 .sobre__media .frame { position: relative; aspect-ratio: 16/9; overflow: hidden; box-shadow: var(--shadow) }
@@ -154,7 +154,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 .estrutura .eyebrow { color: var(--gold) }
 .estrutura .eyebrow::before { background: var(--gold) }
 .estrutura__top { max-width: 76ch; margin-bottom: 64px }
-.estrutura h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 24px 0 22px }
+.estrutura h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 24px 0 0 }
 .estrutura__top p { color: rgba(255,255,255,.66); font-size: 1.06rem; max-width: 54ch }
 .estrutura__grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 74px; align-items: center }
 .floors { position: relative; padding-left: 8px }
@@ -192,7 +192,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 /* ============================================================ TIPOS */
 .tipos { background: var(--cream) }
 .tipos__head { max-width: 76ch; margin-bottom: 56px }
-.tipos h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); margin: 24px 0 18px }
+.tipos h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); margin: 24px 0 0 }
 .tipos__head p { color: var(--muted); font-size: 1.06rem }
 .tipos__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line) }
 .tipo {
@@ -212,7 +212,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 /* ============================================================ INFRA */
 .infra { background: var(--paper) }
 .infra__head { text-align: center; max-width: 76ch; margin: 0 auto 64px }
-.infra h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); margin: 22px 0 16px }
+.infra h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); margin: 22px 0 0 }
 .infra__head p { color: var(--muted); font-size: 1.06rem }
 .infra__grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px }
 .feat { text-align: center; padding: 36px 18px; transition: transform .4s var(--ease) }
@@ -227,7 +227,7 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 .galeria .eyebrow { color: var(--gold) }
 .galeria .eyebrow::before { background: var(--gold) }
 .galeria__head { margin-bottom: 48px }
-.galeria h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 22px 0 16px }
+.galeria h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 22px 0 0 }
 .galeria__head p { color: rgba(255,255,255,.6); max-width: 42ch; font-size: 1.02rem }
 .mosaic { display: grid; grid-template-columns: repeat(4,1fr); grid-auto-rows: 248px; gap: 16px }
 .tile { position: relative; overflow: hidden; cursor: pointer; background: var(--espresso); border-radius: 3px; margin: 0 }
