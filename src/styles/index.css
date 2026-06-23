@@ -418,7 +418,7 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
   .form__submit { grid-column: 1/-1 }
   .contato .lead-form-grid { grid-template-columns: 1fr }
   .contato h2 .ln, .estrutura h2 .ln { white-space: normal }
-  .footer__inner { flex-direction: column; text-align: center; gap: 40px }
+  .footer__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px }
   .footer__copy { text-align: center; order: 2 }
   .lockup { order: 1 }
   .footer__dev { text-align: center; justify-content: center; order: 3; margin-top: 0 }
