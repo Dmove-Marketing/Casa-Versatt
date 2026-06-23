@@ -7,9 +7,60 @@ function buildFonte(tracking: Record<string, string>): string {
   return tracking.landing_page || window.location.pathname;
 }
 
+function validateForm(form: HTMLFormElement): boolean {
+  let valid = true;
+
+  form.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>(
+    '[required]'
+  ).forEach((field) => {
+    const empty = !field.value.trim();
+    const isEmail = (field as HTMLInputElement).type === 'email';
+    const emailInvalid = isEmail && !empty && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+    const group = field.closest<HTMLElement>('.form-group, [class$="-form-group"]');
+
+    if (empty || emailInvalid) {
+      valid = false;
+      field.classList.add('field-invalid');
+      if (group && !group.querySelector('.field-error-msg')) {
+        const msg = document.createElement('span');
+        msg.className = 'field-error field-error-msg visible';
+        msg.textContent = empty ? 'Campo obrigatório' : 'Digite um e-mail válido';
+        group.appendChild(msg);
+      } else if (group) {
+        const existing = group.querySelector('.field-error-msg');
+        if (existing) existing.textContent = empty ? 'Campo obrigatório' : 'Digite um e-mail válido';
+      }
+    } else {
+      field.classList.remove('field-invalid');
+      group?.querySelector('.field-error-msg')?.remove();
+    }
+
+    if (!field.dataset.validationInit) {
+      field.dataset.validationInit = '1';
+      const clear = () => {
+        field.classList.remove('field-invalid');
+        field.closest<HTMLElement>('.form-group, [class$="-form-group"]')
+          ?.querySelector('.field-error-msg')?.remove();
+      };
+      field.addEventListener('input', clear);
+      field.addEventListener('change', clear);
+    }
+  });
+
+  if (!valid) {
+    const first = form.querySelector<HTMLElement>('.field-invalid');
+    first?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    first?.focus();
+  }
+
+  return valid;
+}
+
 export function initForms() {
   const forms = document.querySelectorAll<HTMLFormElement>('form[data-form-id]');
   forms.forEach((form) => {
+    if (form.dataset.formInitialized) return;
+    form.dataset.formInitialized = '1';
     let started = false;
     const formId    = form.dataset.formId!;
     const project   = form.dataset.project || window.location.hostname;
@@ -36,6 +87,8 @@ export function initForms() {
 
       const hp = form.querySelector<HTMLInputElement>('[name="website"]');
       if (hp && hp.value) return;
+
+      if (!validateForm(form)) return;
 
       const submitBtn  = form.querySelector<HTMLButtonElement>('.form-submit, [type="submit"]');
       const btnText    = submitBtn?.querySelector<HTMLElement>('.btn-text');
@@ -72,6 +125,7 @@ export function initForms() {
         'Horário': timeFmt,
         'URL da página': window.location.href,
         'Agente de usuário': navigator.userAgent,
+        'Desenvolvido por': 'Dmove',
         'form_id': formId,
         'form_name': formId,
       };

@@ -378,6 +378,15 @@ function renderField(f: Field, cxInputClass: string, cxSelectClass: string, cxAr
 
   .field-error.visible { display: block; }
 
+  .field-invalid {
+    border-color: #ef4444 !important;
+  }
+
+  .field-invalid:focus {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 3px rgba(239,68,68,.15);
+  }
+
   .form-submit {
     width: 100%;
     margin-top: var(--space-sm, 0.5rem);

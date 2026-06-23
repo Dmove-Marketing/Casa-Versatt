@@ -264,12 +264,12 @@ import '../styles/index.css';
           submitText="Enviar solicitação"
           honeypot
           fields={[
-            { name: 'nome',     type: 'text',     label: 'Nome',                 placeholder: 'Seu nome completo',         required: true,  full: true,  autocomplete: 'name' },
-            { name: 'telefone', type: 'tel',      label: 'Telefone',             placeholder: '(11) 90000-0000',           required: true,  mask: 'phone', autocomplete: 'tel' },
-            { name: 'email',    type: 'email',    label: 'E-mail',               placeholder: 'voce@empresa.com',          required: true,  autocomplete: 'email' },
-            { name: 'data',     type: 'date',     label: 'Data do evento',       placeholder: 'Data do evento' },
-            { name: 'pessoas',  type: 'number',   label: 'Número de pessoas',    placeholder: '120',                       required: true,  min: '1' },
-            { name: 'tipo',     type: 'select',   label: 'Tipo de evento',       placeholder: '',                          required: true,  full: true, options: [
+            { name: 'Nome',           type: 'text',   label: 'Nome',              placeholder: 'Seu nome completo', required: true, full: true, autocomplete: 'name' },
+            { name: 'WhatsApp',       type: 'tel',    label: 'WhatsApp',          placeholder: '(11) 90000-0000',   required: true, mask: 'phone', autocomplete: 'tel' },
+            { name: 'E-mail',         type: 'email',  label: 'E-mail',            placeholder: 'voce@empresa.com',  required: true, autocomplete: 'email' },
+            { name: 'Data do evento', type: 'date',   label: 'Data do evento',    placeholder: 'Data do evento',    required: true },
+            { name: 'Convidados',     type: 'number', label: 'Número de pessoas', placeholder: '120',               required: true, min: '1' },
+            { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento',    placeholder: '',                  required: true, full: true, options: [
               { value: '',                                     label: 'Tipo de evento',                      disabled: true, selected: true },
               { value: 'Aniversário',                          label: 'Aniversário' },
               { value: 'Aniversário debutante',                label: 'Aniversário debutante' },
@@ -289,7 +289,7 @@ import '../styles/index.css';
               { value: 'Workshops, Conferências e Seminários', label: 'Workshops, Conferências e Seminários' },
               { value: 'Outros',                               label: 'Outros' },
             ]},
-            { name: 'detalhes', type: 'textarea', label: 'Detalhes adicionais',  placeholder: 'Conte um pouco sobre o que você imagina para o evento.', full: true },
+            { name: 'Mensagem', type: 'textarea', label: 'Detalhes adicionais',  placeholder: 'Conte um pouco sobre o que você imagina para o evento.', full: true },
           ]}
         />
       </div>
