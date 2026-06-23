@@ -401,9 +401,9 @@ h1, h2, h3 { font-weight: 500; line-height: 1.08; letter-spacing: -.005em }
 .gold { color: var(--gold-deep) }
 .estrutura .gold, .galeria .gold, .contato .gold, .hero .gold { color: var(--gold) }
 
-/* video frame */
-.frame--video { aspect-ratio: 16/9 }
-.frame--video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block }
+.frame--video { aspect-ratio: 16/9; position: relative; background: #000 }
+.frame--video iframe,
+.frame--video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; object-fit: cover }
 
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {
