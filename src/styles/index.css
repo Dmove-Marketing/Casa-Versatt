@@ -407,7 +407,7 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {
-  .nav__cta { padding: 7px 12px; font-size: .6rem; letter-spacing: .12em; text-align: center }
+  .nav__cta { padding: 7px 8px; font-size: .6rem; letter-spacing: .06em; text-align: center }
   .estrutura__grid, .contato__grid, .sobre__grid { grid-template-columns: 1fr; gap: 48px }
   .sobre__media::before { display: none }
   .tipos__grid { grid-template-columns: repeat(2,1fr) }
