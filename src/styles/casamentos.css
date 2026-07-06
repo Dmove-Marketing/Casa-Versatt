@@ -421,6 +421,30 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
   .footer__copy { text-align: center; order: 2 }
   .lockup { order: 1 }
   .footer__dev { text-align: center; justify-content: center; order: 3; margin-top: 0 }
+
+  /* centraliza textos no mobile */
+  .sobre__text,
+  .cerimonia__text,
+  .festa__text { text-align: center }
+
+  .sobre__text p,
+  .cerimonia__text p,
+  .festa__text p { max-width: none }
+
+  .contato > .wrap > .contato__grid > div:first-child { text-align: center }
+  .contato__lead { max-width: none }
+  .contato__aside { justify-items: center }
+  .contato__aside .row { justify-content: center }
+
+  .sobre__text .eyebrow,
+  .cerimonia__text .eyebrow,
+  .festa__text .eyebrow,
+  .contato .eyebrow { justify-content: center }
+
+  .sobre__text .eyebrow::after,
+  .cerimonia__text .eyebrow::after,
+  .festa__text .eyebrow::after,
+  .contato .eyebrow::after { content: ""; width: 34px; height: 1px; background: var(--gold); opacity: .8 }
 }
 @media (max-width: 560px) {
   .wrap { padding: 0 22px }
@@ -433,6 +457,7 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
   .sstat { flex-direction: row; justify-content: center; align-items: baseline; gap: 12px; padding: 18px 0; border-top: 1px solid var(--line) }
   .sstat:first-child { border-top: 0 }
   .sstat + .sstat::before { display: none }
+  .sstat__num { font-size: 1.4rem }
   .footer__copy { width: auto }
 }
 @media (prefers-reduced-motion: reduce) {
