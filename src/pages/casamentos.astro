@@ -1,0 +1,261 @@
+---
+import Base from '../layouts/Base.astro';
+import config from '../../config.json';
+import Img from '../components/ui/Img.astro';
+import LeadForm from '../components/forms/LeadForm.astro';
+import '../styles/casamentos.css';
+---
+
+<Base
+  title="Casa Versatt · Espaço para Casamentos · Zona Sul, São Paulo"
+  description="Espaço para casamentos na Zona Sul de São Paulo. Três pavimentos integrados para cerimônia, cocktail e festa. De 120 a 150 convidados."
+  whatsappFormId="whats-casamentos"
+  whatsappEventTypes={['Bodas', 'Casamento', 'Confraternização social', 'Outros']}
+>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__logo"><Img src="CasaVersatt_Logo.png" alt="Casa Versatt" width={194} height={44} /></a>
+  <a href="#contato" class="nav__cta">Solicite um orçamento</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero__bg">
+    <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_92uxqe92uxqe92ux.webp" alt="Casa Versatt — espaço para casamentos na Zona Sul de SP" loading="eager" fetchpriority="high" width="1920" height="1080" />
+  </div>
+  <div class="hero__inner">
+    <span class="eyebrow reveal d1">Espaço para Casamentos &middot; Zona Sul – SP</span>
+    <h1 class="display reveal d2">
+      <span>A sua história de amor</span>
+      <span><span class="gold">ganha um lugar para ser celebrada.</span></span>
+    </h1>
+    <p class="hero__sub reveal d3">Uma casa preparada para receber cada etapa do seu grande dia.</p>
+    <div class="hero__cta reveal d4">
+      <a href="#contato" class="btn btn--gold">Quero conhecer o espaço <span class="arr">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section class="section sobre" id="sobre">
+  <div class="wrap">
+    <div class="sobre__grid">
+      <div class="sobre__text reveal">
+        <span class="eyebrow">A Casa</span>
+        <h2 class="display">
+          <span class="ln">Um espaço que se molda</span>
+          <span class="ln"><span class="gold">ao amor de vocês.</span></span>
+        </h2>
+        <p>Na Zona Sul de São Paulo, a Casa Versatt foi criada para casais que desejam viver um casamento com personalidade. Com três pavimentos integrados e uma arquitetura contemporânea, cada ambiente se transforma para acompanhar a cerimônia, a celebração e todos os momentos que fazem parte dessa data.</p>
+      </div>
+      <div class="sobre__media reveal d2">
+        <div class="frame frame--photo">
+          <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_drptk9drptk9drpt.webp" alt="Espaço Casa Versatt para casamentos" loading="lazy" />
+        </div>
+      </div>
+    </div>
+    <div class="sobre__stats reveal d2">
+      <div class="sstat"><span class="sstat__num">120–150</span><span class="sstat__lbl">convidados por evento</span></div>
+      <div class="sstat"><span class="sstat__num">3</span><span class="sstat__lbl">pavimentos integrados</span></div>
+      <div class="sstat"><span class="sstat__num">Zona Sul</span><span class="sstat__lbl">São Paulo · SP</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERIMÔNIA -->
+<section class="section estrutura" id="cerimonia">
+  <div class="wrap">
+    <div class="cerimonia__grid">
+      <div class="cerimonia__img reveal">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_imqodiimqodiimqo.webp" alt="Cerimônia Casa Versatt" loading="lazy" />
+      </div>
+      <div class="cerimonia__text reveal d2">
+        <span class="eyebrow">Cerimônia</span>
+        <h2 class="display">
+          <span class="ln">O instante antes do</span>
+          <span class="ln"><span class="gold">"para sempre"</span></span>
+        </h2>
+        <p>Caminhe até o altar e viva o momento mais aguardado da noite com toda a emoção que a ocasião pede.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FESTA -->
+<section class="section festa" id="festa">
+  <div class="wrap">
+    <div class="festa__grid">
+      <div class="festa__text reveal">
+        <span class="eyebrow">Celebração</span>
+        <h2 class="display">
+          <span class="ln">Tudo pronto</span>
+          <span class="ln"><span class="gold">para celebrar</span></span>
+        </h2>
+        <p>Monte a celebração que vocês imaginaram, desde bar de drinks até uma banda, que a casa se prepara para receber cada escolha.</p>
+      </div>
+      <div class="festa__img reveal d2">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_2xiral2xiral2xir.webp" alt="Celebração Casa Versatt" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRAESTRUTURA -->
+<section class="section infra" id="infra">
+  <div class="wrap">
+    <div class="infra__head section-head reveal">
+      <span class="eyebrow center">Infraestrutura</span>
+      <h2 class="display">
+        <span class="ln">Tudo pronto para</span>
+        <span class="ln"><span class="gold">receber com excelência</span></span>
+      </h2>
+      <p>Você e seus convidados terão uma experiência premium do início ao fim.</p>
+    </div>
+    <div class="infra__grid">
+      <div class="feat reveal">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9.5L12 4l7 5.5V21"/><path d="M9.5 21v-5h5v5"/></svg></div>
+        <h3>Arquitetura<br>clean</h3>
+      </div>
+      <div class="feat reveal d1">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M4 9v6h3l5 4V5L7 9z"/><path d="M16 8.5a4 4 0 0 1 0 7"/><path d="M18.5 6a7 7 0 0 1 0 12"/></svg></div>
+        <h3>Acústica<br>comprovada</h3>
+      </div>
+      <div class="feat reveal d2">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M12 21s6.5-5.8 6.5-11A6.5 6.5 0 0 0 5.5 10c0 5.2 6.5 11 6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+        <h3>Localização<br>privilegiada</h3>
+      </div>
+      <div class="feat reveal d3">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18"/><path d="M7.5 9 9 7l1.5 2M7.5 15 9 17l1.5-2"/><circle cx="16" cy="8.5" r=".85"/><circle cx="16" cy="12" r=".85"/><circle cx="16" cy="15.5" r=".85"/></svg></div>
+        <h3>Elevador e<br>acessibilidade</h3>
+      </div>
+      <div class="feat reveal d4">
+        <div class="feat__ic"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.2 2.9 7.7 7 9 4.1-1.3 7-4.8 7-9V6z"/><path d="m9 11.5 2 2 4-4"/></svg></div>
+        <h3>Fornecedores<br>selecionados</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="section galeria" id="galeria">
+  <div class="wrap">
+    <div class="galeria__head section-head reveal">
+      <span class="eyebrow center">Galeria</span>
+      <h2 class="display">
+        <span class="ln">Uma casa. Um casamento.</span>
+        <span class="ln"><span class="gold">Diversas possibilidades.</span></span>
+      </h2>
+      <p>Conheça os detalhes do espaço que receberá o seu casamento.</p>
+    </div>
+    <div class="mosaic reveal d1">
+      <figure class="tile t-wide">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_4yk1q4yk1q4yk1q4.webp" alt="Casamento Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_z76yxlz76yxlz76y.webp" alt="Casamento Casa Versatt" loading="lazy" style="object-position: center 20%" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_6yngki6yngki6yng.webp" alt="Casamento Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_rahgnvrahgnvrahg.webp" alt="Casamento Casa Versatt" loading="lazy" style="object-position: center 20%" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile t-wide">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_em9nmcem9nmcem9n.webp" alt="Casamento Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_vg8vq5vg8vq5vg8v.webp" alt="Casamento Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section contato" id="contato">
+  <div class="wrap">
+    <div class="contato__grid">
+      <div class="reveal">
+        <span class="eyebrow">Casamentos</span>
+        <h2 class="display">
+          <span class="ln">Vamos planejar</span>
+          <span class="ln"><span class="gold">seu casamento?</span></span>
+        </h2>
+        <p class="contato__lead">Preencha o formulário para receber nosso contato.</p>
+        <div class="contato__aside">
+          <div class="row">
+            <svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.2"/></svg>
+            Zona Sul, São Paulo, SP
+          </div>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <LeadForm
+          formId="lead-casamentos"
+          project={config.project_slug}
+          submitUrl={config.forms['lead-form'].webhooks[0]}
+          redirectUrl={config.forms['lead-form'].redirect_on_success}
+          submitText="Enviar solicitação"
+          honeypot
+          fields={[
+            { name: 'Nome',           type: 'text',   label: 'Nome',              placeholder: 'Seu nome completo', required: true, full: true, autocomplete: 'name' },
+            { name: 'WhatsApp',       type: 'tel',    label: 'Telefone',          placeholder: '(11) 90000-0000',   required: true, mask: 'phone', autocomplete: 'tel' },
+            { name: 'E-mail',         type: 'email',  label: 'E-mail',            placeholder: 'voce@email.com',    required: true, autocomplete: 'email' },
+            { name: 'Data do evento', type: 'date',   label: 'Data do evento',    placeholder: 'dd/mm/aaaa',        required: true },
+            { name: 'Convidados',     type: 'number', label: 'Número de pessoas', placeholder: '120',               required: true, min: '1' },
+            { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento',    placeholder: '',                  required: true, full: true, options: [
+              { value: '',                        label: 'Tipo de evento',         disabled: true, selected: true },
+              { value: 'Bodas',                   label: 'Bodas' },
+              { value: 'Casamento',               label: 'Casamento' },
+              { value: 'Confraternização social', label: 'Confraternização social' },
+              { value: 'Outros',                  label: 'Outros' },
+            ]},
+            { name: 'Mensagem', type: 'textarea', label: 'Detalhes adicionais', placeholder: 'Conte um pouco sobre o que vocês imaginam para o casamento.', full: true },
+          ]}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div class="footer__copy">Copyright &copy; 2026 Casa Versatt &middot; Todos os direitos reservados</div>
+      <div class="lockup">
+        <Img src="CasaVersatt_Logo.png" alt="Casa Versatt" width={354} height={80} />
+      </div>
+      <div class="footer__dev">
+        Desenvolvido por
+        <a href="https://dmove.com.br" target="_blank" rel="noopener">
+          <Img src="logo-dmove-preto.png" alt="Dmove" width={72} height={20} />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lb__close" id="lbClose" aria-label="Fechar">
+    <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.4" fill="none">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+  <button class="lb__nav prev" data-lb="-1" aria-label="Anterior">&#8249;</button>
+  <img id="lbImg" alt="" />
+  <button class="lb__nav next" data-lb="1" aria-label="Próximo">&#8250;</button>
+</div>
+
+</Base>
+
+<script>
+  import '../scripts/casamentos.js';
+</script>

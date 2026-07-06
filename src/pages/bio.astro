@@ -1,0 +1,136 @@
+---
+import Base from '../layouts/Base.astro';
+import config from '../../config.json';
+import LeadForm from '../components/forms/LeadForm.astro';
+import { getImage } from 'astro:assets';
+import rawLogo  from '../assets/images/CasaVersatt_Logo.png';
+import rawDmove from '../assets/images/Versao-Principal-Negativo-scaled-e1750426923582.avif';
+const logo      = await getImage({ src: rawLogo,  format: 'webp' });
+const dmoveLogo = await getImage({ src: rawDmove, format: 'avif' });
+const HERO_SRC  = 'https://media.dmove.com.br/clients/casaversatt/photos/CASA_VERSATT__-33.webp';
+import '../styles/bio.css';
+
+const MAPS_URL = 'https://maps.google.com/?q=R.+Francisco+Dias,+68,+Bosque+da+Sa%C3%BAde,+S%C3%A3o+Paulo,+SP,+04116-080';
+const IG_URL   = 'https://www.instagram.com/casaversatt/';
+---
+
+<Base
+  title="Casa Versatt · Espaço para Eventos em São Paulo"
+  description="Uma casa que se adapta à proposta do seu evento. Conheça o Casa Versatt no Bosque da Saúde, São Paulo."
+  ogImage="/images/og-index.jpg"
+  noIndex={true}
+  whatsappFormId="whats-bio"
+>
+  <Fragment slot="head">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </Fragment>
+
+  <!-- HERO -->
+  <section class="bio-hero">
+    <img src={HERO_SRC} alt="Casa Versatt — espaço para eventos em São Paulo" class="bio-hero-img" />
+    <div class="bio-hero-overlay"></div>
+    <div class="bio-hero-content">
+      <img src={logo.src} alt="Casa Versatt" class="bio-logo" />
+      <span class="bio-eyebrow">Bosque da Saúde · São Paulo</span>
+      <h1 class="bio-headline">Uma casa que se adapta à proposta do seu evento</h1>
+    </div>
+  </section>
+
+  <!-- BOTÕES -->
+  <section class="bio-links-section">
+    <div class="bio-links">
+
+      <a href={MAPS_URL} target="_blank" rel="noopener" class="bio-link-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        R. Francisco Dias, 68 · Bosque da Saúde · SP
+      </a>
+
+      <a href={IG_URL} target="_blank" rel="noopener" class="bio-link-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        @casaversatt
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section class="bio-form-section" id="solicitar">
+    <p class="bio-section-label">Fale conosco</p>
+    <h2 class="bio-section-title">Solicite um orçamento</h2>
+    <LeadForm
+      formId="lead-bio"
+      class="bio-form-card"
+      prefix="bio"
+      project={config.project_slug}
+      submitUrl={config.forms['lead-form'].webhooks[0]}
+      redirectUrl={config.forms['lead-form'].redirect_on_success}
+      submitText="Solicitar orçamento"
+      honeypot
+      fields={[
+        { name: 'Nome',     type: 'text',  label: 'Nome completo', placeholder: 'Seu nome', required: true, full: true },
+        { type: 'row', fields: [
+          { name: 'WhatsApp', type: 'tel',   label: 'WhatsApp', placeholder: '(00) 00000-0000', required: true },
+          { name: 'E-mail',   type: 'email', label: 'E-mail',   placeholder: 'seu@email.com',   required: true }
+        ]},
+        { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento', required: true, full: true, options: [
+          { value: '',                                      label: 'Tipo de evento',                       disabled: true, selected: true },
+          { value: 'Aniversário',                           label: 'Aniversário'                           },
+          { value: 'Aniversário debutante',                 label: 'Aniversário debutante'                 },
+          { value: 'Bodas',                                 label: 'Bodas'                                 },
+          { value: 'Casamento',                             label: 'Casamento'                             },
+          { value: 'Confraternização corporativa',          label: 'Confraternização corporativa'          },
+          { value: 'Confraternização social',               label: 'Confraternização social'               },
+          { value: 'Corporativo',                           label: 'Corporativo'                           },
+          { value: 'Feiras e Exposições',                   label: 'Feiras e Exposições'                   },
+          { value: 'Formatura',                             label: 'Formatura'                             },
+          { value: 'Happy Hours',                           label: 'Happy Hours'                           },
+          { value: 'Masterclass e Palestras',               label: 'Masterclass e Palestras'               },
+          { value: 'Mentorias e Treinamentos',              label: 'Mentorias e Treinamentos'              },
+          { value: 'Offsite corporativo',                   label: 'Offsite corporativo'                   },
+          { value: 'Reuniões de Networking',                label: 'Reuniões de Networking'                },
+          { value: 'Shows e Festivais',                     label: 'Shows e Festivais'                     },
+          { value: 'Workshops, Conferências e Seminários',  label: 'Workshops, Conferências e Seminários'  },
+          { value: 'Outros',                                label: 'Outros'                                },
+        ]},
+        { type: 'row', fields: [
+          { name: 'Data do evento', type: 'date',   label: 'Data do evento',   placeholder: 'dd/mm/aaaa', required: true },
+          { name: 'Convidados',     type: 'number', label: 'Nº de convidados', placeholder: 'Ex: 100',    required: true }
+        ]},
+        { name: 'Mensagem', type: 'textarea', label: 'Mensagem', placeholder: 'Detalhes adicionais (não obrigatório)', required: false, full: true }
+      ]}
+    />
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bio-footer">
+    <div class="bio-footer__top">
+      <img src={logo.src} alt="Casa Versatt" class="bio-footer__logo" />
+      <div class="bio-social">
+        <a href={IG_URL} target="_blank" rel="noopener" class="bio-social-btn" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="bio-footer__bottom">
+        <p class="bio-footer__copy">&copy; 2026 Casa Versatt. Todos os direitos reservados.</p>
+        <a href="https://dmove.com.br/" target="_blank" rel="noopener noreferrer" class="bio-footer__dmove">
+          Desenvolvido por
+          <img src={dmoveLogo.src} alt="Dmove" class="bio-footer__dmove-logo" width="60" height="13" />
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</Base>
+
+<script>
+  import '../scripts/bio.js';
+</script>

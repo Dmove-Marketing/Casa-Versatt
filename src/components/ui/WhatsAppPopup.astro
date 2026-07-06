@@ -10,7 +10,28 @@ interface Props {
   submitUrl?: string;     // Webhook n8n — envia em background antes de abrir o WhatsApp
   showAfterMs?: number;   // Delay para aparecer o botão (ms)
   position?: 'bottom-right' | 'bottom-left';
+  eventTypes?: string[];  // Lista de tipos de evento exibidos no select (padrão: lista completa)
 }
+
+const ALL_EVENT_TYPES = [
+  'Aniversário',
+  'Aniversário debutante',
+  'Bodas',
+  'Casamento',
+  'Confraternização corporativa',
+  'Confraternização social',
+  'Corporativo',
+  'Feiras e Exposições',
+  'Formatura',
+  'Happy Hours',
+  'Masterclass e Palestras',
+  'Mentorias e Treinamentos',
+  'Offsite corporativo',
+  'Reuniões de Networking',
+  'Shows e Festivais',
+  'Workshops, Conferências e Seminários',
+  'Outros',
+];
 
 const {
   phone,
@@ -18,6 +39,7 @@ const {
   submitUrl   = '',
   showAfterMs = 3000,
   position    = 'bottom-right',
+  eventTypes  = ALL_EVENT_TYPES,
 } = Astro.props;
 
 const cleanPhone = phone.replace(/\D/g, '');
@@ -89,6 +111,16 @@ const cleanPhone = phone.replace(/\D/g, '');
             />
             <span class="wap-field-error" id="wap-err-whats"></span>
           </div>
+          <div class="wap-field">
+            <input
+              class="wap-input"
+              type="email"
+              name="E-mail"
+              placeholder="E-mail *"
+              autocomplete="email"
+            />
+            <span class="wap-field-error" id="wap-err-email"></span>
+          </div>
           <button type="button" class="wap-btn" id="wap-next">
             Próximo
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
@@ -109,23 +141,7 @@ const cleanPhone = phone.replace(/\D/g, '');
           <div class="wap-field">
             <select class="wap-select" name="Tipo de evento">
               <option value="" disabled selected>Tipo de evento *</option>
-              <option>Aniversário</option>
-              <option>Aniversário debutante</option>
-              <option>Bodas</option>
-              <option>Casamento</option>
-              <option>Confraternização corporativa</option>
-              <option>Confraternização social</option>
-              <option>Corporativo</option>
-              <option>Feiras e Exposições</option>
-              <option>Formatura</option>
-              <option>Happy Hours</option>
-              <option>Masterclass e Palestras</option>
-              <option>Mentorias e Treinamentos</option>
-              <option>Offsite corporativo</option>
-              <option>Reuniões de Networking</option>
-              <option>Shows e Festivais</option>
-              <option>Workshops, Conferências e Seminários</option>
-              <option>Outros</option>
+              {eventTypes.map(t => <option>{t}</option>)}
             </select>
             <span class="wap-field-error" id="wap-err-tipo"></span>
           </div>
@@ -289,10 +305,12 @@ const cleanPhone = phone.replace(/\D/g, '');
     nextBtn.addEventListener('click', () => {
       const nome  = form.querySelector<HTMLInputElement>('[name="Nome"]');
       const whats = form.querySelector<HTMLInputElement>('[name="WhatsApp"]');
+      const email = form.querySelector<HTMLInputElement>('[name="E-mail"]');
       let ok = true;
 
       clearError(document.getElementById('wap-err-nome'));
       clearError(document.getElementById('wap-err-whats'));
+      clearError(document.getElementById('wap-err-email'));
 
       if (!nome?.value.trim()) {
         showError(document.getElementById('wap-err-nome'), 'Informe seu nome');
@@ -300,6 +318,10 @@ const cleanPhone = phone.replace(/\D/g, '');
       }
       if (!whats?.value.trim() || whats.value.replace(/\D/g, '').length < 10) {
         showError(document.getElementById('wap-err-whats'), 'Informe um WhatsApp válido');
+        ok = false;
+      }
+      if (!email?.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        showError(document.getElementById('wap-err-email'), 'Informe um e-mail válido');
         ok = false;
       }
       if (!ok) return;
@@ -351,6 +373,7 @@ const cleanPhone = phone.replace(/\D/g, '');
 
       const nome   = (form.querySelector<HTMLInputElement>('[name="Nome"]')?.value || '').trim();
       const whatsV = (form.querySelector<HTMLInputElement>('[name="WhatsApp"]')?.value || '').trim();
+      const emailV = (form.querySelector<HTMLInputElement>('[name="E-mail"]')?.value || '').trim();
       const tipoV  = tipo?.value || '';
       const dataV  = data?.value || '';
       const convV  = conv?.value || '';
@@ -364,16 +387,19 @@ const cleanPhone = phone.replace(/\D/g, '');
       const tracking    = trackingRaw ? JSON.parse(trackingRaw) : {};
       const now = new Date();
       const payload: Record<string, string> = {
-        'Nome':          nome,
-        'WhatsApp':      whatsV,
+        'Nome':           nome,
+        'WhatsApp':       whatsV,
+        'E-mail':         emailV,
         'Tipo de evento': tipoV,
         'Data do evento': dataV,
-        'Convidados':    convV,
-        'Fonte':         buildFonte(tracking),
-        'Data':          now.toLocaleDateString('pt-BR'),
-        'Horário':       now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false }),
-        'URL da página': window.location.href,
+        'Convidados':     convV,
+        ...tracking,
+        'Fonte':          buildFonte(tracking),
+        'Data':           now.toLocaleDateString('pt-BR'),
+        'Horário':        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false }),
+        'URL da página':  window.location.href,
         'Agente de usuário': navigator.userAgent,
+        'Desenvolvido por': 'Dmove',
         'form_id':   formId,
         'form_name': formId,
       };
