@@ -51,8 +51,8 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(
     to top,
     rgba(21, 17, 14, 0.97) 0%,
-    rgba(21, 17, 14, 0.45) 50%,
-    rgba(21, 17, 14, 0.18) 100%
+    rgba(21, 17, 14, 0.60) 50%,
+    rgba(21, 17, 14, 0.35) 100%
   );
 }
 
