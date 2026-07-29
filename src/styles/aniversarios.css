@@ -404,6 +404,9 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
   .estrutura__split, .personalizacao__split { grid-template-columns: 1fr; min-height: auto }
   .estrutura__img, .personalizacao__img { aspect-ratio: 4/3; position: relative }
   .estrutura__text, .personalizacao__text { padding: 56px 28px }
+  .personalizacao__img { order: 2 }
+  .personalizacao__text { order: 1 }
+  .galeria-179 { object-position: center 20% }
   .sobre__media::before { display: none }
   .infra__grid { grid-template-columns: repeat(2,1fr); gap: 20px }
   .infra__grid > :last-child { grid-column: 1 / -1 }
