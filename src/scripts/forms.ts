@@ -82,15 +82,13 @@ export function initForms() {
       }
     });
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
+    async function handleSubmit() {
       const hp = form.querySelector<HTMLInputElement>('[name="website"]');
       if (hp && hp.value) return;
 
       if (!validateForm(form)) return;
 
-      const submitBtn  = form.querySelector<HTMLButtonElement>('.form-submit, [type="submit"]');
+      const submitBtn  = form.querySelector<HTMLButtonElement>('.form-submit');
       const btnText    = submitBtn?.querySelector<HTMLElement>('.btn-text');
       const btnLoading = submitBtn?.querySelector<HTMLElement>('.btn-loading');
       const msgEl = gridId
@@ -173,6 +171,17 @@ export function initForms() {
           }
         }
       }
+    }
+
+    const submitBtn = form.querySelector<HTMLButtonElement>('.form-submit');
+    submitBtn?.addEventListener('click', handleSubmit);
+
+    form.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'TEXTAREA' || target.tagName === 'BUTTON') return;
+      e.preventDefault();
+      handleSubmit();
     });
   });
 }

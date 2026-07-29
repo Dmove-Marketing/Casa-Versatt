@@ -1,5 +1,5 @@
 /* ============================================================
-   debutantes.css — Casa Versatt · Página Debutantes
+   aniversarios.css — Casa Versatt · Página Aniversários
    ============================================================ */
 
 :root {
@@ -86,7 +86,7 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 
 /* ============================================================ HERO */
 .hero {
-  position: relative; min-height: 100vh; display: flex; align-items: flex-end;
+  position: relative; min-height: 100vh; display: flex; align-items: center;
   background: var(--ink); overflow: hidden;
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0 }
@@ -129,11 +129,11 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 
 /* ============================================================ SOBRE */
 .sobre { background: var(--paper); padding-bottom: 40px }
-.sobre__grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; align-items: center }
+.sobre__grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px; align-items: center }
 .sobre__text { text-align: left }
 .sobre__text .eyebrow { margin-bottom: 24px }
 .sobre__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em; color: var(--text); margin: 0 0 22px }
-.sobre__text p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; max-width: 52ch; margin: 0 }
+.sobre__text p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; margin: 0 }
 .sobre__media { position: relative }
 .sobre__media .frame { position: relative; aspect-ratio: 16/9; overflow: hidden; box-shadow: var(--shadow) }
 .sobre__media::before {
@@ -149,41 +149,62 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 .sstat__num { font-size: clamp(1.9rem, 3.4vw, 2.8rem); color: var(--gold-deep); font-weight: 400; letter-spacing: -.01em; line-height: 1 }
 .sstat__lbl { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); line-height: 1.35 }
 
-/* ============================================================ ESTRUTURA (Festa) */
+/* ============================================================ ESTRUTURA */
 .estrutura { background: var(--ink); color: var(--white); overflow: hidden }
 .estrutura .eyebrow { color: var(--gold) }
 .estrutura .eyebrow::before { background: var(--gold) }
-.estrutura__top { max-width: 76ch; margin-bottom: 64px }
-.estrutura h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 24px 0 0 }
-.estrutura__top p { color: rgba(255,255,255,.66); font-size: 1.06rem; max-width: 54ch }
-
-/* ---- festa (debutantes) ---- */
-.festa { background: var(--ink); color: var(--white); overflow: hidden }
-.festa .eyebrow { color: var(--gold) }
-.festa .eyebrow::before { background: var(--gold) }
-.festa__grid { display: grid; grid-template-columns: 1.18fr .82fr; gap: 74px; align-items: center }
-.festa__text { text-align: left }
-.festa__text .eyebrow { margin-bottom: 24px }
-.festa__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 0 0 22px }
-.festa__text p { color: rgba(255,255,255,.66); font-size: 1.06rem; line-height: 1.8; max-width: 40ch }
-.festa__img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; box-shadow: var(--shadow) }
-
-@media (max-width: 980px) {
-  .festa__grid { grid-template-columns: 1fr; gap: 48px }
+.estrutura__split { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px }
+.estrutura__img { position: relative; overflow: hidden }
+.estr-slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity 1.2s ease-in-out;
 }
+.estr-slide.active { opacity: 1 }
+.estrutura__text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 72px;
+  text-align: left;
+}
+.estrutura__text .eyebrow { margin-bottom: 24px }
+.estrutura__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 0 0 22px }
+.estrutura__text p { color: rgba(255,255,255,.66); font-size: 1.06rem; line-height: 1.8; }
+
+/* ============================================================ PERSONALIZAÇÃO */
+.personalizacao { background: var(--paper) }
+.personalizacao__split {
+  display: grid; grid-template-columns: 1fr 1fr; min-height: 560px;
+}
+.personalizacao__img { position: relative; overflow: hidden }
+.pers-slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  opacity: 0; transition: opacity 1.2s ease-in-out;
+}
+.pers-slide.active { opacity: 1 }
+.personalizacao__text {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 72px;
+  text-align: left;
+}
+.personalizacao__text .eyebrow { margin-bottom: 24px }
+.personalizacao__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em; color: var(--text); margin: 0 0 22px }
+.personalizacao__text p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; margin: 0 }
 
 /* ============================================================ INFRA */
-.infra { background: var(--paper) }
+.infra { background: var(--cream) }
 .infra__head { text-align: center; max-width: 76ch; margin: 0 auto 64px }
 .infra h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); margin: 22px 0 0 }
 .infra__head p { color: var(--muted); font-size: 1.06rem }
 .infra__grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px }
 .feat { text-align: center; padding: 36px 18px; transition: transform .4s var(--ease) }
 .feat:hover { transform: translateY(-6px) }
-.feat__ic { width: 76px; height: 76px; margin: 0 auto 24px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-deep); transition: border-color .45s var(--ease), background .45s var(--ease), color .45s var(--ease) }
+.feat__ic { width: 76px; height: 76px; margin: 0 auto 24px; border: 1px solid var(--line); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-deep); transition: border-color .45s var(--ease), background .45s var(--ease) }
 .feat__ic svg { width: 33px; height: 33px; stroke: currentColor; stroke-width: 1.25; fill: none; stroke-linecap: round; stroke-linejoin: round }
 .feat:hover .feat__ic { border-color: var(--gold); background: rgba(194,168,120,.08) }
 .feat h3 { font-size: .96rem; font-weight: 500; letter-spacing: .02em; color: var(--text); line-height: 1.35 }
+.infra__photos { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 56px }
+.infra__photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; border-radius: 2px; box-shadow: var(--shadow) }
 
 /* ============================================================ GALERIA */
 .galeria { background: var(--ink); color: var(--white) }
@@ -210,7 +231,7 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 .contato .eyebrow { color: var(--gold); margin-bottom: 24px }
 .contato .eyebrow::before { background: var(--gold) }
 .contato h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); color: var(--white); margin: 24px 0 22px }
-.contato h2 .ln, .estrutura h2 .ln { white-space: nowrap }
+.contato h2 .ln { white-space: nowrap }
 .contato__lead { color: rgba(255,255,255,.68); font-size: 1.08rem; max-width: 42ch; margin-bottom: 40px }
 .contato__aside { border-top: 1px solid var(--line-dark); padding-top: 28px; display: grid; gap: 22px }
 .contato__aside .row { display: flex; gap: 16px; align-items: center; color: rgba(255,255,255,.78); font-size: .92rem }
@@ -350,14 +371,13 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 .section-head .eyebrow { margin-bottom: 26px }
 .section-head h2 { margin-top: 0; font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em }
 .section-head p { margin: 22px auto 0; color: var(--muted); font-size: 1.06rem; max-width: 56ch }
-.estrutura .section-head p { color: rgba(255,255,255,.66) }
 .galeria .section-head p { color: rgba(255,255,255,.6) }
 .infra .section-head p { max-width: 70ch }
 .section-head h2 .gold { display: inline }
 
 /* gold highlight */
 .gold { color: var(--gold-deep) }
-.estrutura .gold, .galeria .gold, .contato .gold, .hero .gold, .festa .gold { color: var(--gold) }
+.estrutura .gold, .galeria .gold, .contato .gold, .hero .gold { color: var(--gold) }
 
 .frame--video { aspect-ratio: 16/9; position: relative; background: #000 }
 .frame--video iframe,
@@ -365,29 +385,45 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 .frame--photo { aspect-ratio: 4/3; overflow: hidden; box-shadow: var(--shadow) }
 .frame--photo img { width: 100%; height: 100%; object-fit: cover; display: block }
 
+/* ---- video play button overlay ---- */
+.sobre-video-wrap { box-shadow: var(--shadow); aspect-ratio: 9/16 !important; max-width: 340px; margin: 0 auto }
+.vid-play {
+  position: absolute; inset: 0; margin: auto;
+  width: 72px; height: 72px;
+  background: none; border: none; cursor: pointer;
+  transition: transform .2s var(--ease), opacity .2s;
+  z-index: 2;
+}
+.vid-play:hover { transform: scale(1.12); opacity: .9 }
+.vid-play.hidden { display: none }
+
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {
   .nav__cta { padding: 7px 8px; font-size: .6rem; letter-spacing: .06em; text-align: center }
-  .estrutura__grid, .contato__grid, .sobre__grid { grid-template-columns: 1fr; gap: 48px }
-  .festa__grid { grid-template-columns: 1fr; gap: 48px }
+  .contato__grid, .sobre__grid { grid-template-columns: 1fr; gap: 48px }
+  .estrutura__split, .personalizacao__split { grid-template-columns: 1fr; min-height: auto }
+  .estrutura__img, .personalizacao__img { aspect-ratio: 4/3; position: relative }
+  .estrutura__text, .personalizacao__text { padding: 56px 28px }
   .sobre__media::before { display: none }
   .infra__grid { grid-template-columns: repeat(2,1fr); gap: 20px }
   .infra__grid > :last-child { grid-column: 1 / -1 }
+  .infra__photos { grid-template-columns: 1fr }
   .mosaic { grid-template-columns: 1fr; grid-auto-rows: 240px }
   .tile, .tile.t-wide { grid-column: 1 / -1 }
   .contato .lead-form-grid { grid-template-columns: 1fr }
-  .contato h2 .ln, .estrutura h2 .ln { white-space: normal }
+  .contato h2 .ln { white-space: normal }
   .footer__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 40px }
   .footer__copy { text-align: center; order: 2 }
   .lockup { order: 1 }
   .footer__dev { text-align: center; justify-content: center; order: 3; margin-top: 0 }
 
-  /* centraliza textos no mobile */
   .sobre__text,
-  .festa__text { text-align: center }
+  .estrutura__text,
+  .personalizacao__text { text-align: center }
 
   .sobre__text p,
-  .festa__text p { max-width: none }
+  .estrutura__text p,
+  .personalizacao__text p { max-width: none }
 
   .contato > .wrap > .contato__grid > div:first-child { text-align: center }
   .contato__lead { max-width: none }
@@ -395,11 +431,13 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
   .contato__aside .row { justify-content: center }
 
   .sobre__text .eyebrow,
-  .festa__text .eyebrow,
+  .estrutura__text .eyebrow,
+  .personalizacao__text .eyebrow,
   .contato .eyebrow { justify-content: center }
 
   .sobre__text .eyebrow::after,
-  .festa__text .eyebrow::after,
+  .estrutura__text .eyebrow::after,
+  .personalizacao__text .eyebrow::after,
   .contato .eyebrow::after { content: ""; width: 34px; height: 1px; background: var(--gold); opacity: .8 }
 }
 @media (max-width: 560px) {

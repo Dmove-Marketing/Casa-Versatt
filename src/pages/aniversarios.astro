@@ -3,13 +3,13 @@ import Base from '../layouts/Base.astro';
 import config from '../../config.json';
 import Img from '../components/ui/Img.astro';
 import LeadForm from '../components/forms/LeadForm.astro';
-import '../styles/debutantes.css';
+import '../styles/aniversarios.css';
 ---
 
 <Base
-  title="Casa Versatt · Espaço para Debutantes · Zona Sul, São Paulo"
-  description="Espaço para festas de 15 anos na Zona Sul de São Paulo. Três pavimentos integrados com arquitetura contemporânea para uma noite inesquecível. De 120 a 150 convidados."
-  whatsappFormId="whats-debutantes"
+  title="Casa Versatt · Espaço para Aniversários · Zona Sul, São Paulo"
+  description="Espaço para festas de aniversário na Zona Sul de São Paulo. Três pavimentos integrados com arquitetura contemporânea para uma celebração inesquecível. De 120 a 150 convidados."
+  whatsappFormId="whats-aniversarios"
   whatsappEventTypes={['Aniversário', 'Aniversário debutante', 'Confraternização social', 'Outros']}
 >
 
@@ -22,15 +22,15 @@ import '../styles/debutantes.css';
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero__bg">
-    <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_r4rg0dr4rg0dr4rg.webp" alt="Casa Versatt — espaço para debutantes na Zona Sul de SP" loading="eager" fetchpriority="high" width="1920" height="1080" />
+    <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-452.webp" alt="Casa Versatt — espaço para aniversários na Zona Sul de SP" loading="eager" fetchpriority="high" width="1920" height="1080" />
   </div>
   <div class="hero__inner">
-    <span class="eyebrow reveal d1">Espaço para Debutantes &middot; Zona Sul – SP</span>
+    <span class="eyebrow reveal d1">Espaço para Aniversários &middot; Zona Sul – SP</span>
     <h1 class="display reveal d2">
-      <span>Viva sua festa de debutante</span>
-      <span><span class="gold">com a sua personalidade.</span></span>
+      <span>Celebre a vida.</span>
+      <span><span class="gold">Reúna quem faz parte dela.</span></span>
     </h1>
-    <p class="hero__sub reveal d3">Uma casa preparada para transformar os seus 15 anos numa noite inesquecível.</p>
+    <p class="hero__sub reveal d3">Uma casa versátil para transformar mais um ano da sua história em uma festa inesquecível.</p>
     <div class="hero__cta reveal d4">
       <a href="#contato" class="btn btn--gold">Quero conhecer o espaço <span class="arr">→</span></a>
     </div>
@@ -44,14 +44,22 @@ import '../styles/debutantes.css';
       <div class="sobre__text reveal">
         <span class="eyebrow">A Casa</span>
         <h2 class="display">
-          <span class="ln">Um espaço que se molda</span>
-          <span class="ln"><span class="gold">ao seu estilo.</span></span>
+          <span class="ln">Mais um ano.</span>
+          <span class="ln"><span class="gold">Mais memórias para guardar.</span></span>
         </h2>
-        <p>Na Zona Sul de São Paulo, a Casa Versatt foi criada para debutantes que sonham em viver essa noite com brilho e personalidade. Com três pavimentos integrados e arquitetura contemporânea, cada ambiente se transforma para acompanhar a entrada, a valsa e cada instante que marca essa virada de fase.</p>
+        <p>Na Zona Sul de São Paulo, a Casa Versatt recebe aniversários de diferentes estilos, com ambientes que acompanham a personalidade de cada celebração. A arquitetura contemporânea e os três pavimentos oferecem liberdade para criar uma comemoração intimista, animada e completamente sua.</p>
       </div>
       <div class="sobre__media reveal d2">
-        <div class="frame frame--photo">
-          <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_62n4vm62n4vm62n4.webp" alt="Espaço Casa Versatt para debutantes" loading="lazy" />
+        <div class="frame frame--video sobre-video-wrap">
+          <video id="sobre-vid" preload="metadata" playsinline controls>
+            <source src="https://media.dmove.com.br/clients/casaversatt/videos/VID-20260601-WA0022.webm" type="video/webm" />
+          </video>
+          <button class="vid-play" id="sobre-vid-btn" aria-label="Reproduzir vídeo">
+            <svg viewBox="0 0 80 80" width="72" height="72" aria-hidden="true">
+              <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,.52)"/>
+              <polygon points="32,22 62,40 32,58" fill="#fff"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -63,21 +71,44 @@ import '../styles/debutantes.css';
   </div>
 </section>
 
-<!-- FESTA -->
-<section class="section festa" id="festa">
-  <div class="wrap">
-    <div class="festa__grid">
-      <div class="festa__img reveal">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/Gemini_Generated_Image_5poxh95poxh95pox.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
-      </div>
-      <div class="festa__text reveal d2">
-        <span class="eyebrow">Celebração</span>
-        <h2 class="display">
-          <span class="ln">O momento mais</span>
-          <span class="ln"><span class="gold">aguardado da noite</span></span>
-        </h2>
-        <p>Celebre os seus 15 anos ao lado das pessoas que fazem parte da sua história, em uma festa pensada para ser vivida do início ao fim.</p>
-      </div>
+<!-- ESTRUTURA -->
+<section class="estrutura" id="estrutura">
+  <div class="estrutura__split">
+    <div class="estrutura__text reveal">
+      <span class="eyebrow">Estrutura</span>
+      <h2 class="display">
+        <span class="ln">Três pavimentos</span>
+        <span class="ln"><span class="gold">para festejar</span></span>
+      </h2>
+      <p>Reúna as pessoas que fazem parte da sua trajetória em ambientes modernos e amplos para brindar mais um capítulo da sua vida.</p>
+    </div>
+    <div class="estrutura__img reveal d2">
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-7.webp"    alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide active" />
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-38.webp"   alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide" />
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-35.webp"   alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide" />
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-73.webp"   alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide" />
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-258.webp"  alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide" />
+      <img src="https://media.dmove.com.br/clients/casaversatt/photos/CASA_VERSATT__-6.webp"   alt="Estrutura da Casa Versatt" loading="lazy" class="estr-slide" />
+    </div>
+  </div>
+</section>
+
+<!-- PERSONALIZAÇÃO -->
+<section class="personalizacao" id="personalizacao">
+  <div class="personalizacao__split">
+    <div class="personalizacao__img reveal">
+      <img class="pers-slide active" src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-152.webp" alt="Personalização de festas de aniversário na Casa Versatt" loading="lazy" />
+      <img class="pers-slide" src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-324.webp" alt="Personalização de festas de aniversário na Casa Versatt" loading="lazy" />
+      <img class="pers-slide" src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-498.webp" alt="Personalização de festas de aniversário na Casa Versatt" loading="lazy" />
+    </div>
+    <div class="personalizacao__text reveal d2">
+      <span class="eyebrow">Personalização</span>
+      <h2 class="display">
+        <span class="ln">A festa ganha</span>
+        <span class="ln">a sua personalidade</span>
+        <span class="ln"><span class="gold">em cada detalhe.</span></span>
+      </h2>
+      <p>Escolha como quer viver essa noite e nós criamos uma experiência que tenha tudo a ver com a sua história.</p>
     </div>
   </div>
 </section>
@@ -88,10 +119,10 @@ import '../styles/debutantes.css';
     <div class="infra__head section-head reveal">
       <span class="eyebrow center">Infraestrutura</span>
       <h2 class="display">
-        <span class="ln">Tudo pronto para uma</span>
-        <span class="ln"><span class="gold">noite perfeita</span></span>
+        <span class="ln">Detalhes pensados para</span>
+        <span class="ln"><span class="gold">curtir sem preocupações</span></span>
       </h2>
-      <p>Planejamos tudo para que você e seus convidados tenham uma<br>experiência premium.</p>
+      <p>Planejamos tudo para que você e seus convidados tenham uma experiência premium.</p>
     </div>
     <div class="infra__grid">
       <div class="feat reveal">
@@ -124,34 +155,49 @@ import '../styles/debutantes.css';
     <div class="galeria__head section-head reveal">
       <span class="eyebrow center">Galeria</span>
       <h2 class="display">
-        <span class="ln">Conheça a casa que vai</span>
-        <span class="ln"><span class="gold">receber sua festa de 15 anos.</span></span>
+        <span class="ln">Veja momentos incríveis que</span>
+        <span class="ln"><span class="gold">já aconteceram na Casa Versatt</span></span>
       </h2>
-      <p>Veja os ambientes que darão vida à sua festa.</p>
+      <p>Conheça os ambientes e imagine as possibilidades para celebrar o próximo capítulo da sua história.</p>
     </div>
     <div class="mosaic reveal d1">
+      <!-- linha 1: t-wide + normal + normal -->
       <figure class="tile t-wide">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante_6.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-646.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" style="object-position: center 10%" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
       <figure class="tile">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante_2.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-159.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
       <figure class="tile">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante_4.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-621.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <!-- linha 2: normal + normal + t-wide -->
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-574.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
       <figure class="tile">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante_3.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-486.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
       <figure class="tile t-wide">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante_5.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-301.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <!-- linha 3: t-wide + normal + normal -->
+      <figure class="tile t-wide">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-295.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
       <figure class="tile">
-        <img src="https://media.dmove.com.br/clients/casaversatt/photos/galeria-debutante.webp" alt="Festa de debutante Casa Versatt" loading="lazy" />
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-274.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
+        <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
+      </figure>
+      <figure class="tile">
+        <img src="https://media.dmove.com.br/clients/casaversatt/photos/LEANDRO_4.0__-179.webp" alt="Festa de aniversário Casa Versatt" loading="lazy" />
         <span class="plus"><svg width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4" fill="none"><path d="M12 5v14M5 12h14"/></svg></span>
       </figure>
     </div>
@@ -163,10 +209,10 @@ import '../styles/debutantes.css';
   <div class="wrap">
     <div class="contato__grid">
       <div class="reveal">
-        <span class="eyebrow">Debutantes</span>
+        <span class="eyebrow">Aniversários</span>
         <h2 class="display">
-          <span class="ln">Falta pouco para seu</span>
-          <span class="ln"><span class="gold">sonho se tornar realidade.</span></span>
+          <span class="ln">Comece seu próximo</span>
+          <span class="ln"><span class="gold">ciclo com estilo!</span></span>
         </h2>
         <p class="contato__lead">Preencha o formulário para começar a planejar conosco.</p>
         <div class="contato__aside">
@@ -178,7 +224,7 @@ import '../styles/debutantes.css';
       </div>
       <div class="reveal d2">
         <LeadForm
-          formId="lead-debutantes"
+          formId="lead-aniversarios"
           project={config.project_slug}
           submitUrl={config.forms['lead-form'].webhooks[0]}
           redirectUrl={config.forms['lead-form'].redirect_on_success}
@@ -197,7 +243,7 @@ import '../styles/debutantes.css';
               { value: 'Confraternização social',    label: 'Confraternização social' },
               { value: 'Outros',                     label: 'Outros' },
             ]},
-            { name: 'Mensagem', type: 'textarea', label: 'Detalhes adicionais', placeholder: 'Conte um pouco sobre como você imagina sua festa de 15 anos.', full: true },
+            { name: 'Mensagem', type: 'textarea', label: 'Detalhes adicionais', placeholder: 'Conte um pouco sobre como você imagina sua festa de aniversário.', full: true },
           ]}
         />
       </div>
@@ -238,5 +284,5 @@ import '../styles/debutantes.css';
 </Base>
 
 <script>
-  import '../scripts/debutantes.js';
+  import '../scripts/aniversarios.js';
 </script>

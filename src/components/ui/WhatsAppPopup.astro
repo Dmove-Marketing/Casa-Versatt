@@ -167,7 +167,7 @@ const cleanPhone = phone.replace(/\D/g, '');
             />
             <span class="wap-field-error" id="wap-err-conv"></span>
           </div>
-          <button type="submit" class="wap-btn wap-btn-submit">
+          <button type="button" class="wap-btn wap-btn-submit">
             <span class="wap-btn-text">
               Enviar pelo WhatsApp
               <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
@@ -345,9 +345,7 @@ const cleanPhone = phone.replace(/\D/g, '');
     });
 
     // Form submit
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
+    async function handleWapSubmit() {
       const hp = form.querySelector<HTMLInputElement>('[name="website"]');
       if (hp && hp.value) return;
 
@@ -365,7 +363,7 @@ const cleanPhone = phone.replace(/\D/g, '');
       if (!conv?.value || parseInt(conv.value) < 1) { showError(document.getElementById('wap-err-conv'), 'Informe o número de convidados'); ok = false; }
       if (!ok) return;
 
-      const submitBtn = form.querySelector<HTMLButtonElement>('[type="submit"]');
+      const submitBtn = form.querySelector<HTMLButtonElement>('.wap-btn-submit');
       const btnText   = submitBtn?.querySelector<HTMLElement>('.wap-btn-text');
       const btnLoad   = submitBtn?.querySelector<HTMLElement>('.wap-btn-loading');
       if (submitBtn) submitBtn.disabled = true;
@@ -419,6 +417,17 @@ const cleanPhone = phone.replace(/\D/g, '');
       step2.classList.add('wap-step-hidden');
       success.classList.remove('wap-step-hidden');
       setTimeout(() => { window.open(waUrl, '_blank'); }, 800);
+    }
+
+    const wapSubmitBtn = form.querySelector<HTMLButtonElement>('.wap-btn-submit');
+    wapSubmitBtn?.addEventListener('click', handleWapSubmit);
+
+    form.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'TEXTAREA' || target.tagName === 'BUTTON') return;
+      e.preventDefault();
+      handleWapSubmit();
     });
   }
 
