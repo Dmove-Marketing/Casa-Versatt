@@ -129,17 +129,15 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 
 /* ============================================================ SOBRE */
 .sobre { background: var(--paper); padding-bottom: 40px }
-.sobre__grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px; align-items: center }
-.sobre__text { text-align: left }
+.sobre__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; min-height: 560px }
+.sobre__text { text-align: left; display: flex; flex-direction: column; justify-content: center; padding: 80px 72px 80px 40px }
 .sobre__text .eyebrow { margin-bottom: 24px }
 .sobre__text h2 { font-size: clamp(1.35rem, 2.1vw, 2rem); line-height: 1.18; letter-spacing: .035em; color: var(--text); margin: 0 0 22px }
 .sobre__text p { color: var(--muted); font-size: 1.06rem; line-height: 1.8; margin: 0 }
-.sobre__media { position: relative }
-.sobre__media .frame { position: relative; aspect-ratio: 16/9; overflow: hidden; box-shadow: var(--shadow) }
-.sobre__media::before {
-  content: ""; position: absolute; inset: -14px; border: 1px solid var(--line); z-index: -1;
-  transform: translate(18px, 18px);
-}
+.sobre__media { position: relative; overflow: hidden }
+.sobre__media .frame { position: absolute; inset: 0; overflow: hidden; box-shadow: var(--shadow) }
+.sobre__media img { width: 100%; height: 100%; object-fit: cover; display: block }
+.sobre__stats { max-width: 1240px; margin-left: auto; margin-right: auto; padding: 0 40px }
 .sobre__stats {
   margin: 72px auto 0; display: grid; grid-template-columns: repeat(3,1fr);
   border-top: 1px solid var(--line);
@@ -400,14 +398,17 @@ h1, h2, h3 { font-family: 'ITC Avant Garde Std', sans-serif; font-weight: 500; l
 /* ---------- responsive ---------- */
 @media (max-width: 980px) {
   .nav__cta { padding: 7px 8px; font-size: .6rem; letter-spacing: .06em; text-align: center }
-  .contato__grid, .sobre__grid { grid-template-columns: 1fr; gap: 48px }
+  .contato__grid { grid-template-columns: 1fr; gap: 48px }
+  .sobre__grid { grid-template-columns: 1fr; min-height: auto }
+  .sobre__text { padding: 56px 28px }
+  .sobre__media { aspect-ratio: 4/3; position: relative }
   .estrutura__split, .personalizacao__split { grid-template-columns: 1fr; min-height: auto }
   .estrutura__img, .personalizacao__img { aspect-ratio: 4/3; position: relative }
   .estrutura__text, .personalizacao__text { padding: 56px 28px }
   .personalizacao__img { order: 2 }
   .personalizacao__text { order: 1 }
   .galeria-179 { object-position: center 20% }
-  .sobre__media::before { display: none }
+  .sobre__media .frame { position: absolute; inset: 0 }
   .infra__grid { grid-template-columns: repeat(2,1fr); gap: 20px }
   .infra__grid > :last-child { grid-column: 1 / -1 }
   .infra__photos { grid-template-columns: 1fr }
