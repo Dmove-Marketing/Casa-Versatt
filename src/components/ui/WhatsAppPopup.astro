@@ -214,10 +214,9 @@ const cleanPhone = phone.replace(/\D/g, '');
   import flatpickr from 'flatpickr';
   import { Portuguese } from 'flatpickr/dist/l10n/pt.js';
   import 'flatpickr/dist/flatpickr.min.css';
+  import { buildFonte } from '../../scripts/forms.ts';
 
   flatpickr.localize(Portuguese);
-
-  import { buildFonte } from '../../scripts/forms.ts';
 
 
   function applyPhoneMask(input: HTMLInputElement) {
