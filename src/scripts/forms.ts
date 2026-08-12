@@ -6,7 +6,7 @@ export function buildFonte(tracking?: Record<string, string>): string {
   const base = `Landing page/${pageName}`;
 
   const search = (typeof window !== 'undefined' ? window.location.search : '').replace(/^\?/, '');
-  if (search) return `${base} - ${search}`;
+  if (search) return `${base}?${search}`;
 
   const trackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ttclid', 'msclkid', 'sck'];
   const params = new URLSearchParams();
@@ -16,7 +16,7 @@ export function buildFonte(tracking?: Record<string, string>): string {
   });
   const qs = params.toString();
 
-  return qs ? `${base} - ${qs}` : base;
+  return qs ? `${base}?${qs}` : base;
 }
 
 
