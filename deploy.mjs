@@ -16,4 +16,5 @@ console.log(`Enviando dist/ → ${dest}`);
 execSync(`scp -r dist/* ${dest}`, { stdio: "inherit" });
 
 console.log(`Ajustando permissões em ${server}...`);
-execSync(`ssh ${user}@${server} "chmod -R 755 ${remote_path}/_astro"`, { stdio: "inherit" });
+execSync(`ssh ${user}@${server} "chmod -R 755 ${remote_path}"`, { stdio: "inherit" });
+
