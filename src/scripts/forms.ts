@@ -3,7 +3,20 @@ export function buildFonte(tracking?: Record<string, string>): string {
   const cleanPath = path.split('?')[0].split('#')[0].replace(/\/+$/, '');
   const segment = cleanPath.split('/').pop()?.replace(/\.html$/, '') || '';
   const pageName = (!segment || segment === 'index') ? 'eventos-corporativos' : segment;
-  return `Landing page/${pageName}`;
+  const base = `Landing page/${pageName}`;
+
+  const search = (typeof window !== 'undefined' ? window.location.search : '').replace(/^\?/, '');
+  if (search) return `${base} - ${search}`;
+
+  const trackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'ttclid', 'msclkid', 'sck'];
+  const params = new URLSearchParams();
+  trackingKeys.forEach((key) => {
+    const value = tracking?.[key];
+    if (value) params.set(key, value);
+  });
+  const qs = params.toString();
+
+  return qs ? `${base} - ${qs}` : base;
 }
 
 
