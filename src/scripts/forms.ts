@@ -1,11 +1,11 @@
-function buildFonte(tracking: Record<string, string>): string {
-  if (tracking.utm_source) {
-    let f = tracking.utm_source;
-    if (tracking.utm_medium) f += ` / ${tracking.utm_medium}`;
-    return f;
-  }
-  return tracking.landing_page || window.location.pathname;
+export function buildFonte(tracking?: Record<string, string>): string {
+  const path = (typeof window !== 'undefined' ? window.location.pathname : '') || tracking?.landing_page || '';
+  const cleanPath = path.split('?')[0].split('#')[0].replace(/\/+$/, '');
+  const segment = cleanPath.split('/').pop()?.replace(/\.html$/, '') || '';
+  const pageName = (!segment || segment === 'index') ? 'eventos-corporativos' : segment;
+  return `Landing page/${pageName}`;
 }
+
 
 function validateForm(form: HTMLFormElement): boolean {
   let valid = true;
