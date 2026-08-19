@@ -76,7 +76,7 @@ const IG_URL   = 'https://www.instagram.com/casaversatt/';
       fields={[
         { name: 'Nome',     type: 'text',  label: 'Nome completo', placeholder: 'Seu nome', required: true, full: true },
         { type: 'row', fields: [
-          { name: 'WhatsApp', type: 'tel',   label: 'WhatsApp', placeholder: '(00) 00000-0000', required: true },
+          { name: 'WhatsApp', type: 'tel',   label: 'WhatsApp', placeholder: '(00) 00000-0000', required: true, mask: 'phone' },
           { name: 'E-mail',   type: 'email', label: 'E-mail',   placeholder: 'seu@email.com',   required: true }
         ]},
         { name: 'Tipo de evento', type: 'select', label: 'Tipo de evento', required: true, full: true, options: [
